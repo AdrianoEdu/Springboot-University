@@ -1,7 +1,10 @@
 package university.main.controller;
 
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
+
+import university.main.model.University;
+
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -9,9 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("university")
 public class UniversityController {
 
-    @GetMapping(value = "/abc")
-    public String getMethodName(@RequestParam String param) {
-        return "ALO";
+    @PostMapping()
+    public String CreateUniversity(@RequestParam University university) {
+        return university.getName();
     }
-
 }
